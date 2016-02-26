@@ -10,10 +10,10 @@ def load_data():
     data = np.empty((793,3,64,64),dtype="float32")
     label = np.empty((793,),dtype="uint8")
 
-    imgs = os.listdir("/home/ganlinhao/data")
+    imgs = os.listdir("/home/ganlinhao/DeepLearning/keras/Disease/feature_output/data")
     num = len(imgs)
     for i in range(num):
-        img = Image.open("/home/ganlinhao/data/"+imgs[i])
+        img = Image.open("/home/ganlinhao/DeepLearning/keras/Disease/feature_output/data/"+imgs[i])
         arr = np.asarray(img,dtype="float32")
         data[i,:,:,:] = [arr[:,:,0], arr[:,:,1], arr[:,:,2]]
         label[i] = int(imgs[i].split('_')[0])
